@@ -3,6 +3,13 @@ This file is part of Friday Night Funkin' Rewritten by HTV04
 ------------------------------------------------------------------------------]]
 
 weeks[3] = {
+	songs =
+	{
+		"Pico",
+		"Philly Nice",
+		"Blammed",
+	},
+
 	init = function()
 		weeks.init()
 		

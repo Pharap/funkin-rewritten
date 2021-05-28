@@ -3,6 +3,11 @@ This file is part of Friday Night Funkin' Rewritten by HTV04
 ------------------------------------------------------------------------------]]
 
 weeks[0] = {
+	songs =
+	{
+		"Tutorial"
+	},
+
 	init = function(songNum)
 		bpm = 100
 		

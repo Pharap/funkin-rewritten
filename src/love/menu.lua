@@ -5,25 +5,6 @@ This file is part of Friday Night Funkin' Rewritten by HTV04
 menu = {
 	init = function()
 		menuState = 0
-		weekSongs = {
-			{
-				"Tutorial"
-			},
-			{
-				"Bopeebo",
-				"Fresh",
-				"Dadbattle"
-			},
-			{
-				"Spookeez",
-				"South"
-			},
-			{
-				"Pico",
-				"Philly Nice",
-				"Blammed"
-			}
-		}
 		difficultyStrs = {
 			"-easy",
 			"",
@@ -65,7 +46,7 @@ menu = {
 					songNum = songNum - 1
 					
 					if songNum < 0 then
-						songNum = #weekSongs[weekNum + 1]
+						songNum = #weeks[weekNum].songs
 					end
 				elseif menuState == 2 then
 					songDifficulty = songDifficulty - 1
@@ -86,7 +67,7 @@ menu = {
 				elseif menuState == 1 then
 					songNum = songNum + 1
 					
-					if songNum > #weekSongs[weekNum + 1] then
+					if songNum > #weeks[weekNum].songs then
 						songNum = 0
 					end
 				elseif menuState == 2 then
@@ -164,7 +145,7 @@ menu = {
 				if songNum == 0 then
 					love.graphics.printf("Choose a song: < (Story Mode) >", -640, 285, 853, "center", nil, 1.5, 1.5)
 				else
-					love.graphics.printf("Choose a song: < " .. weekSongs[weekNum + 1][songNum] .. " >", -640, 285, 853, "center", nil, 1.5, 1.5)
+					love.graphics.printf("Choose a song: < " .. weeks[weekNum].songs[songNum] .. " >", -640, 285, 853, "center", nil, 1.5, 1.5)
 				end
 			elseif menuState == 2 then
 				if songDifficulty == 1 then
