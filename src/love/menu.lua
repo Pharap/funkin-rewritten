@@ -5,11 +5,6 @@ This file is part of Friday Night Funkin' Rewritten by HTV04
 menu = {
 	init = function()
 		menuState = 0
-		difficultyStrs = {
-			"-easy",
-			"",
-			"-hard"
-		}
 		
 		selectSound = love.audio.newSource("sounds/scrollMenu.ogg", "static")
 		confirmSound = love.audio.newSource("sounds/confirmMenu.ogg", "static")
@@ -90,7 +85,14 @@ menu = {
 					graphics.fadeOut(
 						1,
 						function()
-							songAppend = difficultyStrs[songDifficulty]
+							local difficultyStrings =
+							{
+								"-easy",
+								"",
+								"-hard"
+							}
+
+							songAppend = difficultyStrings[songDifficulty]
 							
 							inMenu = false
 							inGame = true
